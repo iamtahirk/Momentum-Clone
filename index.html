@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Momentus</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/fontawesome.js" crossorigin="anonymous"></script>
+</head>
+<body class="noselect">
+    <div class="initial-screen">
+        <div class="nametxt">Hello, what's your name?</div>
+
+        <form action="" class="getnameform">
+            <input type="text" name="get-name-input" id="get-name-input" autocomplete="off">
+        </form>
+    </div>
+    <main class="mainscreen hideme">
+        <div class="header-block">
+            <div class="crypto-container" id="cryptocontainer">Crypto</div>
+            <div class="weather-container" id="weathercontainer">
+                <div class="weather-info"></div>
+                <div class="currentlocation"></div>
+            </div>
+        </div>
+
+        <div class="time-block">
+            <div class="timedisplay">10:57 AM</div>
+            <div class="welcome-msg"><span id="welcometxt">Good morning</span>, <span id="username"></span></div>
+            <div class="focus-msg">What is your main focus for today?</div>
+
+            <form action="" class="focus-today">
+                <input type="text" name="focus-input" id="focus-input" autocomplete="off">
+            </form>
+
+            <div class="todayfocus hideme" id="todayfocus">
+                <i class="fa-solid fa-trash" id="deletefocus"></i> <span id="focusmsgdisp"></span>
+            </div>
+        </div>
+
+        <div class="footer-block">
+            <div class="image-info">Image by:</div>
+            <div class="quote-txt"></div>
+            <div class="todo-container">
+                <div class="todobox">
+                    <div class="newtodos bottom hideme">
+                        <ul class="todos" title="Double click an item to remove">
+                        </ul>
+                        <input type="text" name="newtodo" id="newtodo" autocomplete="off" placeholder="Enter a new todo">
+                    </div>
+                </div>
+                <span class="todolabel" id="todotxt">Todo</span>
+            </div>
+        </div> 
+    </main>
+    
+    
+    <script src="./js/app.js"></script>
+</body>
+</html>
