@@ -4,6 +4,15 @@
 
 I have added a few further options to the dashboard to make it more like Momentum.
 
+Includes:
+- Current bitcoin, ethereum and tether price.
+- Live weather (will require access to your location)
+- Today's Focus
+- 12/24 Hour Time Format with greetings accordingly
+- Live background using Unsplash API with a link to particular image @unsplash.
+- Random Quote Display
+- Todo with local storage.
+
 It uses local storage for name, todos, and today's focus.
 
 Here is how to set this up as chrome extension:
