@@ -402,4 +402,5 @@ ul.todos::-webkit-scrollbar-thumb {
     
 .hideme {
     display: none;
+    font-size: 0;
 }

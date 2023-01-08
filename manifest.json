@@ -4,7 +4,7 @@
         "128": "./images/perspective_matte_1.png"
     },
     "name": "Personal Dashboard",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Dashboard as a new tab which includes weather, digital currencies current price, ToDos, inspirational quote and a background image from Unsplash. This was a fun scrimba project to practicing async JS",
     "action": {
         "128": "./images/perspective_matte_1.png"

@@ -152,7 +152,6 @@ const fetchBackground = async (e) => {
     }
     catch (error) {
         console.log(error.message);
-
         document.body.style.backgroundImage = `linear-gradient(to bottom, rgba(78, 78, 78, 0.1), rgba(10, 10, 10, 0.35)),url('../images/robert-lukeman-_RBcxo9AU-U-unsplash.jpg')`;
 
     }
@@ -160,7 +159,7 @@ const fetchBackground = async (e) => {
 
 const fetchQuotes = async (e) => {
     try {
-        const response = await fetch (`https://type.fit/api/quotes`);
+        const response = await fetch (`../js/quotes.json`);
         const data = await response.json();
 
         quoteDisplay.innerText = data[Math.floor(Math.random()*data.length)].text;
@@ -183,9 +182,7 @@ const addToDos = (e) => {
 
         let spanItem = document.createElement('span');
 
-        i.classList.add('fa-solid');
-        i.classList.add('fa-trash');
-        i.classList.add('todoitem');
+        i.classList.add('fa-solid', 'fa-trash', 'todoitem');
 
         spanItem.innerText = addToDoInput.value;
 
