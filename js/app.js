@@ -33,31 +33,29 @@ let is24Hours = false;
 let todaysFocus = false;
 
 const timerDisplayFormat = () => {
-    let now = new Date();
-    let hours = now.getHours();
-    
-    let minutes = now.getMinutes().toString().padStart(2, "0");
-
-    displayWelcomeMsg (hours);
-
-    // console.log("here it is: " + hours, minutes);
-
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes().toString().padStart(2, "0");
+    displayWelcomeMsg(hours);
+  
     if (is24Hours) {
-        timeDisplay.innerText = `${hours}:${minutes}`
+      timeDisplay.innerText = `${hours}:${minutes}`;
     } else {
-        let suffix = hours >= 12 ? 'PM' : 'AM';
-        let hours12 = hours % 12;
-        if (hours12 === 0) {
-            hours12 = 12;
-        }
-        timeDisplay.innerText = hours12 + ':' + minutes + " " + suffix;
+      const suffix = hours >= 12 ? 'PM' : 'AM';
+      let hours12 = hours % 12;
+      if (hours12 === 0) {
+        hours12 = 12;
+      }
+      timeDisplay.innerText = `${hours12}:${minutes} ${suffix}`;
     }
-}
+};
 
 const chgTimeFormat = () => {
     is24Hours = !is24Hours;
-}
+    timerDisplayFormat();
+};
 
+/*
 const displayWelcomeMsg = (hour) => {
     if (hour >= 3 && hour < 12) {
         welcomeMsgDisplay.textContent = "Good Morning";
@@ -67,6 +65,17 @@ const displayWelcomeMsg = (hour) => {
         welcomeMsgDisplay.textContent = "Good Evening";
     }
 }
+*/
+
+const displayWelcomeMsg = (hour) => {
+    const greeting =
+      hour >= 3 && hour < 12
+        ? "Good Morning"
+        : hour >= 12 && hour < 18
+        ? "Good Afternoon"
+        : "Good Evening";
+    welcomeMsgDisplay.textContent = greeting;
+};
 
 const getFocus = () => {
     if (!todaysFocus) {
@@ -248,10 +257,10 @@ const checkTodaysFocus = () => {
         todaysFocus = true;
     }
 }
+
 const removeLocalFocus = () => {
     localStorage.removeItem('todaysfocus');
 }
-
 
 const checkUserName = () => {
     let userName;
@@ -304,7 +313,6 @@ const getToDos = () => {
     });
 }
 
-
 const removeLocalTodos = (todo) => {
     let todos;
     if (localStorage.getItem("todos") === null) {
@@ -328,7 +336,6 @@ const removeToDos = (e) => {
     removeLocalTodos(item);
 }
 
-
 focusInput.addEventListener("keydown", function (e) {
     //checks whether the pressed key is "Enter"
     if (e.code === "Enter") { 
@@ -336,7 +343,6 @@ focusInput.addEventListener("keydown", function (e) {
         getFocus();
     }
 });
-
 
 document.addEventListener("DOMContentLoaded", getToDos);
 document.addEventListener("DOMContentLoaded", checkUserName);
